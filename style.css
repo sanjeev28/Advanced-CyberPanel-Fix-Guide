@@ -1,0 +1,72 @@
+:root {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text: #e2e8f0;
+}
+
+.light {
+    --bg: #ffffff;
+    --card: #f1f5f9;
+    --text: #0f172a;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial;
+    margin: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background: var(--card);
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+}
+
+.step {
+    background: var(--card);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.code {
+    background: black;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    font-family: monospace;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.progress {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: var(--card);
+    padding: 10px;
+}
+
+.bar {
+    height: 10px;
+    background: #555;
+    border-radius: 5px;
+}
+
+#barFill {
+    height: 10px;
+    width: 0%;
+    background: lime;
+}
