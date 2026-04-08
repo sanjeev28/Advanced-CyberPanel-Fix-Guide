@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Log Analyzer</title>
+<style>
+body { font-family:Arial; padding:20px; }
+textarea { width:100%; height:200px; }
+.output { background:#000; color:#0f0; padding:10px; }
+</style>
+</head>
+
+<body>
+
+<h1>📊 CyberPanel Log Analyzer</h1>
+
+<textarea id="log"></textarea>
+<br><br>
+<button onclick="check()">Analyze Logs</button>
+
+<div class="output" id="result"></div>
+
+<script>
+function check() {
+    let log = document.getElementById("log").value;
+    let msg = "";
+
+    if(log.includes("lscpd")) msg += "✔ CyberPanel service detected\n";
+    if(log.includes("error")) msg += "❌ Error found in logs\n";
+    if(log.includes("permission")) msg += "⚠️ Permission issue\n";
+    if(log.includes("resolv")) msg += "🌐 DNS issue detected\n";
+
+    document.getElementById("result").innerText = msg || "No major issue found";
+}
+</script>
+
+</body>
+</html>
