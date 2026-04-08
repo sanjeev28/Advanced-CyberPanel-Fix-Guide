@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Troubleshooter</title>
+<style>
+body { font-family:Arial; padding:20px; }
+textarea { width:100%; height:200px; }
+.result { background:#111; color:#0f0; padding:10px; margin-top:10px; }
+</style>
+</head>
+
+<body>
+
+<h1>🧠 CyberPanel AI Helper</h1>
+
+<textarea id="input" placeholder="Paste error here..."></textarea>
+<br><br>
+<button onclick="analyze()">Analyze</button>
+
+<div class="result" id="output"></div>
+
+<script>
+function analyze() {
+    let text = document.getElementById("input").value;
+
+    let result = "No issue detected";
+
+    if(text.includes("Temporary failure resolving")) {
+        result = "❌ DNS Issue → Run fix.sh";
+    }
+    else if(text.includes("Internal Error")) {
+        result = "⚠️ CyberPanel broken → reinstall";
+    }
+    else if(text.includes("mysql")) {
+        result = "⚠️ MySQL issue → restart mysql";
+    }
+
+    document.getElementById("output").innerText = result;
+}
+</script>
+
+</body>
+</html>
