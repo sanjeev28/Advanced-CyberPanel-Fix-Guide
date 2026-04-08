@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CyberPanel Fix Docs</title>
+<style>
+body { margin:0; font-family:Arial; display:flex; }
+.sidebar {
+  width:250px; background:#111; color:#fff; height:100vh; padding:20px;
+}
+.sidebar a { display:block; color:#ccc; margin:10px 0; text-decoration:none; }
+.content { flex:1; padding:20px; }
+code { background:#eee; padding:5px; display:block; margin:10px 0; }
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>Docs</h2>
+<a href="#dns">Fix DNS</a>
+<a href="#cyberpanel">Fix CyberPanel</a>
+<a href="#script">Auto Script</a>
+</div>
+
+<div class="content">
+
+<h1>🚀 CyberPanel Fix Docs</h1>
+
+<h2 id="dns">🔧 DNS Fix</h2>
+<code>
+chattr -i /etc/resolv.conf
+rm -f /etc/resolv.conf
+systemctl unmask systemd-resolved
+systemctl enable systemd-resolved
+systemctl start systemd-resolved
+ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+</code>
+
+<h2 id="cyberpanel">🔧 CyberPanel Repair</h2>
+<code>
+sh &lt;(curl https://cyberpanel.net/install.sh)
+</code>
+
+<h2 id="script">⚡ Auto Script</h2>
+<code>
+bash fix.sh
+</code>
+
+</div>
+
+</body>
+</html>
